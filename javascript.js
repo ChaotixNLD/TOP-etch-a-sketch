@@ -1,12 +1,8 @@
 const container = document.getElementById("container")
 const btns = Array.from(document.querySelectorAll(".color-selector"))
+//initial backgroundcolor //
 let bgColor = "red"
-btns.forEach((btn) => {
-    btn.addEventListener("click", ()=>{
-        bgColor = btn.value
-    })
-})
-console.log(btns)
+
 
 createGrid(16)
 
@@ -24,4 +20,23 @@ for(let i = 1; i <=num; i++){
         })
     }
 }
+}
+
+btns.forEach((btn) => {
+    btn.addEventListener("click", ()=>{
+        bgColor = btn.value
+    })
+})
+
+function createNew(){
+    let userInput = prompt("Please input a number between 2 and 100")
+    if(userInput < 2 || userInput > 100){
+        alert("Please enter a valid number")
+        createNew()
+    }
+    else{
+        container.innerHTML = ""
+        createGrid(userInput)
+    }
+    
 }

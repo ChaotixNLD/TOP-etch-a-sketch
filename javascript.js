@@ -10,6 +10,9 @@ for(let i = 1; i <=num; i++){
         let row = document.createElement("div")
         row.classList.add("row")
         column.appendChild(row)
+        row.addEventListener("mouseover", function(e){
+            e.target.style.backgroundColor = "red"
+        })
     }
 }
 }
